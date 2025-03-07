@@ -4,5 +4,13 @@ steps:
   - name: 'bash'
     args: ['-c', 'echo Hello World!']
   - name: 'bash'
-    args: ['-c', 'echo Hi Suresh, Welcome to Cloud Build!']
+    args: ['-c', 'cat /etc/os-release']
+  - name: 'bash'
+    args: ['-c', 'hostname']
+  - name: 'gcr.io/cloud-builders/docker'
+    script: |
+      docker build -t us-central1-docker.pkg.dev/$PROJECT_ID/myapp:v1 .
+    automapSubstitutions: true
+images:
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/myapp:v1'
   
