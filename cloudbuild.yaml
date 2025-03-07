@@ -3,3 +3,5 @@ options:
 steps:
   - name: 'bash'
     args: ['-c', 'echo Hello World!']
+  - name: 'bash'
+    args: ['-c', 'echo Hi Suresh, Welcome to Cloud Build!']
